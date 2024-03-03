@@ -10,10 +10,10 @@ insmod:
 rmmod:
 	rmmod the_usctm.ko
 compile-extern:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD)/Module/Linux-sys_call_table-discoverer modules 
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD)/Module/Linux_sys_call_table modules 
 clean-extern:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD)/Module/Linux-sys_call_table-discoverer clean
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD)/Module/Linux_sys_call_table clean
 insmod-extern:
-	insmod Module/Linux-sys_call_table-discoverer/the_usctm.ko
+	insmod Module/Linux_sys_call_table/the_usctm.ko
 rmmod-extern:
 	rmmod -f the_usctm.ko

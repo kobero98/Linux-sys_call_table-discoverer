@@ -235,14 +235,14 @@ int init_module(void) {
 			if(j>=MAX_FREE) break;
 		}
 
-#ifdef SYS_CALL_INSTALL
-	cr0 = read_cr0();
-        unprotect_memory();
-        hacked_syscall_tbl[FIRST_NI_SYSCALL] = (unsigned long*)sys_trial;
-        protect_memory();
-	printk("%s: a sys_call with 2 parameters has been installed as a trial on the sys_call_table at displacement %d\n",MODNAME,FIRST_NI_SYSCALL);	
-#else
-#endif
+// #ifdef SYS_CALL_INSTALL
+// 	cr0 = read_cr0();
+//         unprotect_memory();
+//         hacked_syscall_tbl[FIRST_NI_SYSCALL] = (unsigned long*)sys_trial;
+//         protect_memory();
+// 	printk("%s: a sys_call with 2 parameters has been installed as a trial on the sys_call_table at displacement %d\n",MODNAME,FIRST_NI_SYSCALL);	
+// #else
+//#endif
 
         printk("%s: module correctly mounted\n",MODNAME);
 
